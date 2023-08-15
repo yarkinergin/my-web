@@ -1,4 +1,4 @@
-import { Button } from "baseui/button";
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import {FormGroup, Container, InputGroup, Alert } from "react-bootstrap";
 
@@ -110,7 +110,7 @@ function Login(props: any) {
           </FormGroup>
           <Alert className="alert alert-danger" id="pswAlert" hidden={show}>{ error}</Alert>
           <InputGroup>
-            <Button className="btn mb-4 mx-auto border text-white my-2" type="submit" size="large" kind="primary" isLoading={formik.isSubmitting}>
+            <Button className="btn mb-4 mx-auto border text-white my-2" type="submit" onClick={onSubmit}>
               Login
             </Button>
           </InputGroup>
