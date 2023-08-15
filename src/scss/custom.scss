@@ -1,0 +1,139 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+.bg-lg {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+  height: 100vh;
+  width: 100%;
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}
+
+$container-max-widths: (
+  sm: 520px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+.sm300 {
+  max-width: 400px;
+}
+
+// Header
+.App {
+  text-align: center;
+  background-image: url("../images/main-bg.jpg");
+  padding: 25%;
+  background-size: cover;
+}
+
+.headerCon {
+  backdrop-filter: blur(8px); // This be the blur
+
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 65vw;
+  height: auto;
+  text-align: center;
+
+  border-color: rgb(136, 0, 0);
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.mainName {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 8vw;
+  padding: 4px;
+  color: #ffffff;
+
+  font-weight: 100; 
+  background: -webkit-linear-gradient(#00679e, #870000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// About Me
+.aboutMe {
+  background-color: #630000;
+
+}
+
+.aboutMePp {
+  margin-top: 7vh;
+  margin-left: 7vw;
+  
+  width: 200px;
+
+  border-radius: 10px;
+}
+
+.aboutMeTxt {
+  margin-top: 7vh;
+  padding: 5%;
+
+  color: white;
+}
+
+// Skills
+.skills {
+  background-color: rgb(255, 255, 255);
+  padding: 5%;
+  max-width: 100%;
+}
+
+.skillCol {
+
+}
+
+.skillHeader {
+  color: #630000;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #00679e; /* Safari */  
+  text-decoration-color: #00679e;
+  text-underline-offset: 12px;
+
+  text-align: center;
+
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.bg-projects {
+  background-color: rgb(48, 48, 48);
+  max-width: 100%;
+}
+
+.work-img-col {
+  text-align: center;
+}
+
+.footer {
+  background-color: rgb(57, 0, 0);
+  padding: 3%;
+  max-width: 100%;
+}
+
+.bg-nav {
+  backdrop-filter: blur(8px);
+}
