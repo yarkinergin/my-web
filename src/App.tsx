@@ -6,6 +6,7 @@ import AdminPage from './pages/Admin-page/AdminPage';
 import { RequireAuth } from 'react-auth-kit';
 import { Login } from './pages/Login-page/Login';
 import LoginPage from './pages/Login-page/LoginPage';
+import 'sass';
 import './scss/custom.scss'
 
 let App = () => {
