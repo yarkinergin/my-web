@@ -32,7 +32,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": concurrently \"npm install\" \"react-scripts start\" \"cd api && npm start\"",
     "build": "react-scripts build",
     "dev": "(cd api && npm start) & npm start",
     "test": "react-scripts test",
