@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f4a728d0.css",
+    "main.js": "/static/js/main.1bf608c9.js",
+    "static/js/787.7de47166.chunk.js": "/static/js/787.7de47166.chunk.js",
+    "static/media/main-bg.jpg": "/static/media/main-bg.10f0a6e5f9901426d9cc.jpg",
+    "static/media/mini-pp.jpg": "/static/media/mini-pp.6e8736cc2b885c55c9d3.jpg",
+    "static/media/dc-logo.png": "/static/media/dc-logo.0e1a8e7b3898527ae15f.png",
+    "index.html": "/index.html",
+    "main.f4a728d0.css.map": "/static/css/main.f4a728d0.css.map",
+    "main.1bf608c9.js.map": "/static/js/main.1bf608c9.js.map",
+    "787.7de47166.chunk.js.map": "/static/js/787.7de47166.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f4a728d0.css",
+    "static/js/main.1bf608c9.js"
+  ]
+}
