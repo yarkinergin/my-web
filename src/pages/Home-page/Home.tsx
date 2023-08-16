@@ -35,7 +35,7 @@ function Home() {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/info/about?host=yarking&password=cK7MR8t6FVtUZ4Jo',
+        url: 'https://filthy-handbag-fawn.cyclic.cloud/api/info/about',
         headers: { 
             'Content-Type': 'application/json'
         },
@@ -60,7 +60,7 @@ function Home() {
     axios.request({
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills?host=yarking&password=cK7MR8t6FVtUZ4Jo',
+        url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills',
         headers: { 
             'Content-Type': 'application/json'
         },

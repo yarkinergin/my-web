@@ -35,7 +35,7 @@ const AdminPage: React.FC = () => {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/info/about',
+        url: 'https://filthy-handbag-fawn.cyclic.cloud/api/info/about',
         headers: { 
             'Content-Type': 'application/json'
         },
@@ -62,7 +62,7 @@ const AdminPage: React.FC = () => {
         axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills',
+            url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -96,7 +96,7 @@ const AdminPage: React.FC = () => {
         setError("");
         try {
             const response = await axios.post(
-                "https://real-gold-kangaroo-cap.cyclic.cloud/api/info/about-reg",
+                "https://filthy-handbag-fawn.cyclic.cloud/api/info/about-reg",
                 values
             );
         } catch (err) {
@@ -112,7 +112,7 @@ const AdminPage: React.FC = () => {
             axios.request({
                 method: 'post',
                 maxBodyLength: Infinity,
-                url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills',
+                url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills',
                 headers: { 
                     'Content-Type': 'application/json'
                 },
@@ -125,7 +125,7 @@ const AdminPage: React.FC = () => {
                     axios.request({
                         method: 'post',
                         maxBodyLength: Infinity,
-                        url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills-reg',
+                        url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills-reg',
                         headers: { 
                             'Content-Type': 'application/json'
                         },
@@ -162,7 +162,7 @@ const AdminPage: React.FC = () => {
         await axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills-del',
+            url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills-del',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -177,7 +177,7 @@ const AdminPage: React.FC = () => {
         try {
             if (header !== "") {
                 const response = await axios.post(
-                    'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills-add',
+                    'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills-add',
                     {
                         "email": "yarkinerg@gmail.com",
                         "header": header,
