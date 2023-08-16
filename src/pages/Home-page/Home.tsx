@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Parser } from "html-to-react";
 
 import Projects from './Projects';
@@ -36,7 +35,7 @@ function Home() {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'http://127.0.0.1:2400/api/info/about',
+        url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/info/about',
         headers: { 
             'Content-Type': 'application/json'
         },
@@ -61,7 +60,7 @@ function Home() {
     axios.request({
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://127.0.0.1:2400/api/blog/skills',
+        url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills',
         headers: { 
             'Content-Type': 'application/json'
         },

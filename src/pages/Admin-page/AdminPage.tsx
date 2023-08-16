@@ -1,15 +1,13 @@
-import React, { useEffect, useState, MouseEvent } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useSignOut } from 'react-auth-kit'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from "react-bootstrap/esm/Button";
-import { Container, Form, InputGroup } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
-import { response } from "express";
-import { setIn, useFormik } from "formik";
-import background from "../../images/main-bg.jpg"
+import { useFormik } from "formik";
 
 const AdminPage: React.FC = () => {
     const signOut = useSignOut()
@@ -31,15 +29,13 @@ const AdminPage: React.FC = () => {
 
     const [skillItems, setSKi] = useState("");
 
-    const ref = React.useRef();
-
     const [error, setError] = useState("");
 
     let data = ""    
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'http://127.0.0.1:2400/api/info/about',
+        url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/info/about',
         headers: { 
             'Content-Type': 'application/json'
         },
@@ -66,7 +62,7 @@ const AdminPage: React.FC = () => {
         axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://127.0.0.1:2400/api/blog/skills',
+            url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -100,7 +96,7 @@ const AdminPage: React.FC = () => {
         setError("");
         try {
             const response = await axios.post(
-                "http://127.0.0.1:2400/api/info/about-reg",
+                "https://real-gold-kangaroo-cap.cyclic.cloud/api/info/about-reg",
                 values
             );
         } catch (err) {
@@ -116,7 +112,7 @@ const AdminPage: React.FC = () => {
             axios.request({
                 method: 'post',
                 maxBodyLength: Infinity,
-                url: 'http://127.0.0.1:2400/api/blog/skills',
+                url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills',
                 headers: { 
                     'Content-Type': 'application/json'
                 },
@@ -129,7 +125,7 @@ const AdminPage: React.FC = () => {
                     axios.request({
                         method: 'post',
                         maxBodyLength: Infinity,
-                        url: 'http://127.0.0.1:2400/api/blog/skills-reg',
+                        url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills-reg',
                         headers: { 
                             'Content-Type': 'application/json'
                         },
@@ -166,7 +162,7 @@ const AdminPage: React.FC = () => {
         await axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://127.0.0.1:2400/api/blog/skills-del',
+            url: 'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills-del',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -179,9 +175,9 @@ const AdminPage: React.FC = () => {
 
     const addSkill = async () => {
         try {
-            if (header != "") {
+            if (header !== "") {
                 const response = await axios.post(
-                    'http://127.0.0.1:2400/api/blog/skills-add',
+                    'https://real-gold-kangaroo-cap.cyclic.cloud/api/blog/skills-add',
                     {
                         "email": "yarkinerg@gmail.com",
                         "header": header,

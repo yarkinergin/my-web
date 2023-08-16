@@ -5,9 +5,8 @@ import {FormGroup, Container, InputGroup, Alert } from "react-bootstrap";
 import { useSignIn } from "react-auth-kit";
 import { useFormik } from "formik";
 import axios, { AxiosError } from "axios";
-import { useRef, useState } from "react";
-import { Form, useNavigate } from "react-router-dom";
-import { response } from "express";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login(props: any) {
   const [error, setError] = useState("");
@@ -16,15 +15,13 @@ function Login(props: any) {
   const navigate = useNavigate();
   const [show, setShow] = useState(true);
 
-  const url = "http://127.0.0.1:2400/"
-
   const onSubmit = async (values: any) => {
     console.log("Values: ", values);
     setError("");
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:2400/api/auth/login",
+        "https://real-gold-kangaroo-cap.cyclic.cloud/api/auth/login?host=yarking&password=cK7MR8t6FVtUZ4Jo",
         values
       );
 
