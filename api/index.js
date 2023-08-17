@@ -8,7 +8,7 @@ var cors = require('cors')
 
 app.use(cors())
 
-const  dbURI = "mongodb://127.0.0.1:27017/app"
+const  dbURI = "mongodb+srv://yarking:cK7MR8t6FVtUZ4Jo@cluster0.08lofn7.mongodb.net/?retryWrites=true/app"
 app.use(express.json())
 app.use('/api/auth', authRoute)
 app.use('/api/info', infoRoute)
