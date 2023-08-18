@@ -38,7 +38,7 @@ function Home() {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'http://127.0.0.1:2400/api/info/about',
+        url: 'https://yarkinergin.cyclic.cloud/api/info/about',
         headers: { 
             'Content-Type': 'application/json'
         },
@@ -67,7 +67,7 @@ function Home() {
         axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://127.0.0.1:2400/api/blog/skills',
+            url: 'https://yarkinergin.cyclic.cloud/api/blog/skills',
             headers: { 
                 'Content-Type': 'application/json'
             },

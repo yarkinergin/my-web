@@ -37,7 +37,7 @@ const AdminPage: React.FC = () => {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'http://127.0.0.1:2400/api/info/about',
+        url: 'https://yarkinergin.cyclic.cloud/api/info/about',
         headers: { 
             'Content-Type': 'application/json'
         },
@@ -65,7 +65,7 @@ const AdminPage: React.FC = () => {
         axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://127.0.0.1:2400/api/blog/skills',
+            url: 'https://yarkinergin.cyclic.cloud/api/blog/skills',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -99,7 +99,7 @@ const AdminPage: React.FC = () => {
         setError("");
         try {
             const response = await axios.post(
-                "http://127.0.0.1:2400/api/info/about-reg",
+                "https://yarkinergin.cyclic.cloud/api/info/about-reg",
                 values
             );
         } catch (err) {
@@ -115,7 +115,7 @@ const AdminPage: React.FC = () => {
             axios.request({
                 method: 'post',
                 maxBodyLength: Infinity,
-                url: 'http://127.0.0.1:2400/api/blog/skills',
+                url: 'https://yarkinergin.cyclic.cloud/api/blog/skills',
                 headers: { 
                     'Content-Type': 'application/json'
                 },
@@ -128,7 +128,7 @@ const AdminPage: React.FC = () => {
                     axios.request({
                         method: 'post',
                         maxBodyLength: Infinity,
-                        url: 'http://127.0.0.1:2400/api/blog/skills-reg',
+                        url: 'https://yarkinergin.cyclic.cloud/api/blog/skills-reg',
                         headers: { 
                             'Content-Type': 'application/json'
                         },
@@ -166,7 +166,7 @@ const AdminPage: React.FC = () => {
         await axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://127.0.0.1:2400/api/blog/skills-del',
+            url: 'https://yarkinergin.cyclic.cloud/api/blog/skills-del',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -182,7 +182,7 @@ const AdminPage: React.FC = () => {
         try {
             if (header !== "") {
                 const response = await axios.post(
-                    'http://127.0.0.1:2400/api/blog/skills-add',
+                    'https://yarkinergin.cyclic.cloud/api/blog/skills-add',
                     {
                         "email": "yarkinerg@gmail.com",
                         "header": header,

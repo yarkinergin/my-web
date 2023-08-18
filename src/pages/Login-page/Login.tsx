@@ -21,7 +21,7 @@ function Login(props: any) {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:2400/api/auth/login",
+        "https://yarkinergin.cyclic.cloud/api/auth/login",
         values
       );
 
