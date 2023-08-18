@@ -12,8 +12,8 @@ function Projects () {
                 <Row>
                     <Col xs lg={4} className="work-img-col py-4">
                         <div className="bg-image ripple rounded" data-mdb-ripple-color="light">
-                        <img src={dcLogo} alt="dcLogo" className="w-50" />
                         <a href="https://discord.com/api/oauth2/authorize?client_id=859181482161078314&permissions=8&scope=bot">
+                        <img src={dcLogo} alt="dcLogo" className="w-50" />
                             <div className="mask" style={{backgroundColor: "hsla(0, 0%, 0%, 0.4)"}}>
                             </div>
                             <div className="hover-overlay">

@@ -29,13 +29,15 @@ const AdminPage: React.FC = () => {
 
     const [skillItems, setSKi] = useState("");
 
+    const [count, setCount] = useState(0);
+
     const [error, setError] = useState("");
 
     let data = ""    
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'https://filthy-handbag-fawn.cyclic.cloud/api/info/about',
+        url: 'http://127.0.0.1:2400/api/info/about',
         headers: { 
             'Content-Type': 'application/json'
         },
@@ -43,6 +45,7 @@ const AdminPage: React.FC = () => {
     };
     
     useEffect(() => {
+        console.log("s")
         axios.request(config)
         .then((response) => {
             setName(response.data.name)
@@ -62,7 +65,7 @@ const AdminPage: React.FC = () => {
         axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills',
+            url: 'http://127.0.0.1:2400/api/blog/skills',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -84,19 +87,19 @@ const AdminPage: React.FC = () => {
                     <Button id={ski.header} type="button" className="btn btn-danger mx-3 my-2" onClick={onDelete}>Delete</Button>
                     <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
                 </div>
-            ));       
+            )); 
         })
         .catch((error) => {
             console.log(error);
         });
-    })
+    }, [count])
 
     const onSubmit = async (values: any) => {
         console.log("Values: ", values);
         setError("");
         try {
             const response = await axios.post(
-                "https://filthy-handbag-fawn.cyclic.cloud/api/info/about-reg",
+                "http://127.0.0.1:2400/api/info/about-reg",
                 values
             );
         } catch (err) {
@@ -110,9 +113,9 @@ const AdminPage: React.FC = () => {
         // update skills
         try {
             axios.request({
-                method: 'post',
+                method: 'get',
                 maxBodyLength: Infinity,
-                url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills',
+                url: 'http://127.0.0.1:2400/api/blog/skills',
                 headers: { 
                     'Content-Type': 'application/json'
                 },
@@ -125,7 +128,7 @@ const AdminPage: React.FC = () => {
                     axios.request({
                         method: 'post',
                         maxBodyLength: Infinity,
-                        url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills-reg',
+                        url: 'http://127.0.0.1:2400/api/blog/skills-reg',
                         headers: { 
                             'Content-Type': 'application/json'
                         },
@@ -151,6 +154,7 @@ const AdminPage: React.FC = () => {
 
             console.log("Error: ", err);
         }
+        setCount(count + 1)
     }
 
     const onDelete = async (event: any) => {
@@ -162,7 +166,7 @@ const AdminPage: React.FC = () => {
         await axios.request({
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills-del',
+            url: 'http://127.0.0.1:2400/api/blog/skills-del',
             headers: { 
                 'Content-Type': 'application/json'
             },
@@ -171,13 +175,14 @@ const AdminPage: React.FC = () => {
                 "header": header
             })
         })
+        setCount(count + 1)
     }
 
     const addSkill = async () => {
         try {
             if (header !== "") {
                 const response = await axios.post(
-                    'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills-add',
+                    'http://127.0.0.1:2400/api/blog/skills-add',
                     {
                         "email": "yarkinerg@gmail.com",
                         "header": header,
@@ -200,6 +205,7 @@ const AdminPage: React.FC = () => {
 
             console.log("Error: ", err);
         }
+        setCount(count + 1)
     }
 
     const logout = () => {

@@ -5,7 +5,7 @@ import {BsGithub, BsLinkedin, BsInstagram, BsFacebook, BsTwitter } from "react-i
 
 function Footer() {
     return(
-        <Container className="footer text-center">
+        <Container className="footer text-center mw-100">
             <Container className="my-2">
                 <a href="https://github.com/yarkinergin">
                     <BsGithub size={30} className="mx-2" color="white"/>

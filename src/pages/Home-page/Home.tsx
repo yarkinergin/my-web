@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Parser } from "html-to-react";
@@ -24,9 +24,12 @@ function Home() {
     const [interests, setInt] = useState("");
     const [employment, setEmp] = useState("");
 
-    const [skillItems, setSKi] = useState("");
+    const [skillItems, setSKi] = useState(null);
+
+    let skillArr: any = []
 
     const htmlParser = Parser();
+
 
     let data = {
         email: `yarkinerg@gmail.com`
@@ -35,57 +38,61 @@ function Home() {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'https://filthy-handbag-fawn.cyclic.cloud/api/info/about',
+        url: 'http://127.0.0.1:2400/api/info/about',
         headers: { 
             'Content-Type': 'application/json'
         },
         data : data
     };
-    axios.request(config)
-    .then((response) => {
-        setName(response.data.name)
-        setInfo(response.data.info)
-        setAboutme(response.data.aboutme)
-        setLoc(response.data.location)
-        setNat(response.data.nationality)
-        setStu(response.data.study)
-        setAge(response.data.age)
-        setInt(response.data.interests)
-        setEmp(response.data.employment)
-    })
-    .catch((error) => {
-        console.log(error);
-    });
 
-    axios.request({
-        method: 'post',
-        maxBodyLength: Infinity,
-        url: 'https://filthy-handbag-fawn.cyclic.cloud/api/blog/skills',
-        headers: { 
-            'Content-Type': 'application/json'
-        },
-        data: JSON.stringify({
-            "email": "yarkinerg@gmail.com"
+    useEffect(() => {
+        console.log("s")
+
+        axios.request(config)
+        .then((response) => {
+            setName(response.data.name)
+            setInfo(response.data.info)
+            setAboutme(response.data.aboutme)
+            setLoc(response.data.location)
+            setNat(response.data.nationality)
+            setStu(response.data.study)
+            setAge(response.data.age)
+            setInt(response.data.interests)
+            setEmp(response.data.employment)
         })
-    })
-    .then((response) => {
-         setSKi((response.data.skill).map((ski: any) => 
-            <div key={ski._id}>
-            <Row>
-                <Col md lg={3} className='skillCol mb-4'>
-                    <h2 className='skillHeader'>{ski.header}</h2>
-                </Col>
-                <Col>
-                    {htmlParser.parse(ski.text)}
-                </Col>
-            </Row>
-            <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
-            </div>
-        ));
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+        .catch((error) => {
+            console.log(error);
+        });
+
+        axios.request({
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: 'http://127.0.0.1:2400/api/blog/skills',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            data: data
+        })
+        .then((response) => {
+            setSKi((response.data.skill).map((ski: any) => 
+                <div key={ski._id}>
+                <Row>
+                    <Col md lg={3} className='skillCol mb-4'>
+                        <h2 className='skillHeader'>{ski.header}</h2>
+                    </Col>
+                    <Col>
+                        {htmlParser.parse(ski.text)}
+                    </Col>
+                </Row>
+                <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
+                </div>
+            ));
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }, [name]);
+    
     
     return (
         <div>
