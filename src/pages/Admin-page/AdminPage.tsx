@@ -113,7 +113,7 @@ const AdminPage: React.FC = () => {
         // update skills
         try {
             axios.request({
-                method: 'get',
+                method: 'post',
                 maxBodyLength: Infinity,
                 url: 'http://127.0.0.1:2400/api/blog/skills',
                 headers: { 
