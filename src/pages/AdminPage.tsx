@@ -250,7 +250,7 @@ const AdminPage: React.FC = () => {
                     <Form.Label>About</Form.Label>
                     <Form.Control disabled  id="aboutme" type="aboutme" as="textarea" rows={3} placeholder="Info" defaultValue={aboutme} onChange={formik.handleChange}/>
                     <InputGroup className="my-3">
-                        <Form.Control disabled  id="location" type="location" placeholder="Location" defaultValue={location} onChange={formik.handleChange}/>
+                        <Form.Control disabled id="location" type="location" placeholder="Location" defaultValue={location} onChange={formik.handleChange}/>
                         <Form.Control disabled  id="nationality" type="nationality" placeholder="Nationality" defaultValue={nationality} onChange={formik.handleChange}/>
                         <Form.Control disabled  id="study" type="study" placeholder="Study" defaultValue={study} onChange={formik.handleChange}/>
                     </InputGroup>
