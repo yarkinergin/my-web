@@ -270,9 +270,9 @@ const AdminPage: React.FC = () => {
                     <Form.Label>Text</Form.Label>
                     <Form.Control disabled id="text-skill" type="text" as="textarea" rows={3} onChange={(event) => {setText(event.target.value)}} placeholder="Text"/>
                     <p className="text-danger">{skillErr}</p>
-                    <Button className="btn btn-success mx-3 my-2" variant="primary" onClick={addSkill}>Add</Button>
+                    <Button className="btn btn-success mx-3 my-2" variant="primary" onClick={}>Add</Button>
                 </Form.Group>
-                <Button className="mx-3 mb-3" variant="primary" type="submit" onClick={onSubmit}>
+                <Button className="mx-3 mb-3" variant="primary" type="submit" onClick={}>
                     Submit
                 </Button>
                 <Button variant="dark" className="mb-3" onClick={logout}>Log Out</Button>
