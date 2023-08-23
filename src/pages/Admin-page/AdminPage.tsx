@@ -82,7 +82,7 @@ const AdminPage: React.FC = () => {
                     </Form.Group>
                     <Form.Group className="mb-1 mx-4">
                         <Form.Label>Text</Form.Label>
-                        <Form.Control id={ski._id} type="text" as="textarea" rows={3} placeholder="Text" defaultValue={ski.text}/>
+                        <Form.Control disabled id={ski._id} type="text" as="textarea" rows={3} placeholder="Text" defaultValue={ski.text}/>
                     </Form.Group>
                     <Button id={ski.header} type="button" className="btn btn-danger mx-3 my-2" onClick={onDelete}>Delete</Button>
                     <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
