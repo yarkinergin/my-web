@@ -236,11 +236,11 @@ const AdminPage: React.FC = () => {
                 <h2 className="mx-3">Header</h2>
                 <Form.Group className="mb-3 mx-4 w-25" controlId="name">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control name="name" type="name" placeholder="Enter your full name" defaultValue={name} onChange={formik.handleChange}/>
+                    <Form.Control disabled name="name" type="name" placeholder="Enter your full name" defaultValue={name} onChange={formik.handleChange}/>
                 </Form.Group>
                 <Form.Group className="mb-3 mx-4" controlId="info">
                     <Form.Label>Bio</Form.Label>
-                    <Form.Control type="info" as="textarea" rows={3} placeholder="Bio" defaultValue={info} onChange={formik.handleChange}/>
+                    <Form.Control disabled  type="info" as="textarea" rows={3} placeholder="Bio" defaultValue={info} onChange={formik.handleChange}/>
                 </Form.Group>
                 <Form.Group className="mb-3 mx-4" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
@@ -248,27 +248,27 @@ const AdminPage: React.FC = () => {
                 <h2 className="mx-3 mt-3">About Me</h2>
                 <Form.Group className="mb-3 mx-4">
                     <Form.Label>About</Form.Label>
-                    <Form.Control id="aboutme" type="aboutme" as="textarea" rows={3} placeholder="Info" defaultValue={aboutme} onChange={formik.handleChange}/>
+                    <Form.Control disabled  id="aboutme" type="aboutme" as="textarea" rows={3} placeholder="Info" defaultValue={aboutme} onChange={formik.handleChange}/>
                     <InputGroup className="my-3">
-                        <Form.Control id="location" type="location" placeholder="Location" defaultValue={location} onChange={formik.handleChange}/>
-                        <Form.Control id="nationality" type="nationality" placeholder="Nationality" defaultValue={nationality} onChange={formik.handleChange}/>
-                        <Form.Control id="study" type="study" placeholder="Study" defaultValue={study} onChange={formik.handleChange}/>
+                        <Form.Control disabled  id="location" type="location" placeholder="Location" defaultValue={location} onChange={formik.handleChange}/>
+                        <Form.Control disabled  id="nationality" type="nationality" placeholder="Nationality" defaultValue={nationality} onChange={formik.handleChange}/>
+                        <Form.Control disabled  id="study" type="study" placeholder="Study" defaultValue={study} onChange={formik.handleChange}/>
                     </InputGroup>
                     <InputGroup>
-                        <Form.Control id="age" type="age" placeholder="Age" defaultValue={age} onChange={formik.handleChange}/>
-                        <Form.Control id="interests" type="interests" placeholder="Interests" defaultValue={interests} onChange={formik.handleChange}/>
-                        <Form.Control id="employment" type="employment" placeholder="Employment" defaultValue={employment} onChange={formik.handleChange}/>
+                        <Form.Control disabled  id="age" type="age" placeholder="Age" defaultValue={age} onChange={formik.handleChange}/>
+                        <Form.Control disabled  id="interests" type="interests" placeholder="Interests" defaultValue={interests} onChange={formik.handleChange}/>
+                        <Form.Control disabled  id="employment" type="employment" placeholder="Employment" defaultValue={employment} onChange={formik.handleChange}/>
                     </InputGroup>
                 </Form.Group>
                 <h2 className="mx-3 mt-3">Skills</h2>
                 {skillItems}
                 <Form.Group className="mb-3 mx-4">
                     <Form.Label>Header</Form.Label>
-                    <Form.Control id="header-skill" type="header" onChange={(event) => {setHead(event.target.value)}} placeholder="Header"/>
+                    <Form.Control disabled id="header-skill" type="header" onChange={(event) => {setHead(event.target.value)}} placeholder="Header"/>
                 </Form.Group>
                 <Form.Group className="mb-1 mx-4">
                     <Form.Label>Text</Form.Label>
-                    <Form.Control id="text-skill" type="text" as="textarea" rows={3} onChange={(event) => {setText(event.target.value)}} placeholder="Text"/>
+                    <Form.Control disabled  id="text-skill" type="text" as="textarea" rows={3} onChange={(event) => {setText(event.target.value)}} placeholder="Text"/>
                     <p className="text-danger">{skillErr}</p>
                     <Button className="btn btn-success mx-3 my-2" variant="primary" onClick={addSkill}>Add</Button>
                 </Form.Group>
