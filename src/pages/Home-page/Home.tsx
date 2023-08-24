@@ -104,7 +104,7 @@ function Home() {
                     <img width="400px" src="https://imgyukle.com/i/rtBICs"/>
                     <h1 className="text-black">Sokak hayvanları bağış sitesi</h1>
                     <h2>Bapış yapmak istiyorsanız arayın: +90 530 479 63 90</h2>
-                    <p className='text-light'>{htmlParser.parse()}</p>
+                    <p className='text-light'></p>
                     <Container className="my-2 pb-2">
                         <a href="https://github.com/yarkinergin">
                             <BsGithub size={20} className="mx-2" color="white"/>
