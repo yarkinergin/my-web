@@ -100,11 +100,12 @@ function Home() {
             <Container id='home' fluid className='App w-100'>
                 <Container className='headerCon'>
                     <h1 className="mainName">{}</h1>
-                    <img width="400px" src="https://imgyukle.com/i/rtBuvS"/>
-                    <img width="400px" src="https://imgyukle.com/i/rtBICs"/>
+                    <p className='text-light'>
+                    <img width="400px" src="https://imgyukle.com/i/rtBuvS" alt="zogurtan"/>
+                    <img width="400px" src="https://imgyukle.com/i/rtBICs" alt="tophuso"/>
                     <h1 className="text-black">Sokak hayvanları bağış sitesi</h1>
                     <h2>Bapış yapmak istiyorsanız arayın: +90 530 479 63 90</h2>
-                    <p className='text-light'></p>
+                    </p>
                     <Container className="my-2 pb-2">
                         <a href="https://github.com/yarkinergin">
                             <BsGithub size={20} className="mx-2" color="white"/>
