@@ -99,8 +99,12 @@ function Home() {
             <Navbar/>
             <Container id='home' fluid className='App w-100'>
                 <Container className='headerCon'>
-                    <h1 className="mainName">{name}</h1>
-                    <p className='text-light'>{htmlParser.parse(info)}</p>
+                    <h1 className="mainName">{}</h1>
+                    <img width="400px" src="https://imgyukle.com/i/rtBuvS"/>
+                    <img width="400px" src="https://imgyukle.com/i/rtBICs"/>
+                    <h1 className="text-black">Sokak hayvanları bağış sitesi</h1>
+                    <h2>Bapış yapmak istiyorsanız arayın: +90 530 479 63 90</h2>
+                    <p className='text-light'>{htmlParser.parse()}</p>
                     <Container className="my-2 pb-2">
                         <a href="https://github.com/yarkinergin">
                             <BsGithub size={20} className="mx-2" color="white"/>
@@ -128,17 +132,17 @@ function Home() {
                     <Col>
                         <Container className='aboutMeTxt'>
                             <h2 className='mb-4'>About Me</h2>
-                            <p className='w-75'>{aboutme}</p>
+                            <p className='w-75'>{}</p>
                             <Row className='justify-content-center pt-2 w-75'>
                                 <Col xs lg={5}>
-                                    <p><strong><BsPinMapFill/> Location:</strong> {location}</p>
-                                    <p><strong><BsFlag/> Nationality:</strong> {nationality}</p>
-                                    <p><strong><BsMortarboard/> Study:</strong> {study}</p>
+                                    <p><strong><BsPinMapFill/> Location:</strong> {}</p>
+                                    <p><strong><BsFlag/> Nationality:</strong> {}</p>
+                                    <p><strong><BsMortarboard/> Study:</strong> {}</p>
                                 </Col>
                                 <Col xs lg={5}>
-                                    <p><strong><BsCalendarEvent/> Age:</strong> {age}</p>
-                                    <p><strong><BsStars/> Interests:</strong> {interests}</p>
-                                    <p><strong><BsFillBuildingsFill/> Employment:</strong> {employment}</p>
+                                    <p><strong><BsCalendarEvent/> Age:</strong> {}</p>
+                                    <p><strong><BsStars/> Interests:</strong> {}</p>
+                                    <p><strong><BsFillBuildingsFill/> Employment:</strong> {}</p>
                                 </Col>
                             </Row>
                         </Container>
@@ -146,7 +150,7 @@ function Home() {
                 </Row>
             </Container>
             <Container id='skills' className='skills'>
-                {skillItems}
+                {}
             </Container>
             <Projects/>
             <Footer/>
