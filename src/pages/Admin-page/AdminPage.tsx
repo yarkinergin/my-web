@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { useSignOut } from 'react-auth-kit'
+import { Buffer } from "buffer";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from "react-bootstrap/esm/Button";
@@ -39,7 +40,8 @@ const AdminPage: React.FC = () => {
         maxBodyLength: Infinity,
         url: 'https://yarkinergin.cyclic.cloud/api/info/about',
         headers: { 
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
         },
         data : data
     };
@@ -67,7 +69,8 @@ const AdminPage: React.FC = () => {
             maxBodyLength: Infinity,
             url: 'https://yarkinergin.cyclic.cloud/api/blog/skills',
             headers: { 
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
             },
             data: JSON.stringify({
                 "email": "yarkinerg@gmail.com"
@@ -97,10 +100,19 @@ const AdminPage: React.FC = () => {
     const onSubmit = async (values: any) => {
         console.log("Values: ", values);
         setError("");
+        let config2 = {
+            maxBodyLength: Infinity,
+            url: 'https://yarkinergin.cyclic.cloud/api/info/about-reg',
+            headers: { 
+              'Content-Type': 'application/json', 
+              'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
+            },
+            data : data
+        };
         try {
             const response = await axios.post(
                 "https://yarkinergin.cyclic.cloud/api/info/about-reg",
-                values
+                values, config2
             );
         } catch (err) {
             if (err && err instanceof AxiosError){
@@ -117,7 +129,8 @@ const AdminPage: React.FC = () => {
                 maxBodyLength: Infinity,
                 url: 'https://yarkinergin.cyclic.cloud/api/blog/skills',
                 headers: { 
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
                 },
                 data: JSON.stringify({
                     "email": "yarkinerg@gmail.com"
@@ -130,7 +143,8 @@ const AdminPage: React.FC = () => {
                         maxBodyLength: Infinity,
                         url: 'https://yarkinergin.cyclic.cloud/api/blog/skills-reg',
                         headers: { 
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
                         },
                         data: JSON.stringify({
                             email: "yarkinerg@gmail.com",
@@ -168,7 +182,8 @@ const AdminPage: React.FC = () => {
             maxBodyLength: Infinity,
             url: 'https://yarkinergin.cyclic.cloud/api/blog/skills-del',
             headers: { 
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
             },
             data: JSON.stringify({
                 "email": "yarkinerg@gmail.com",
@@ -179,6 +194,13 @@ const AdminPage: React.FC = () => {
     }
 
     const addSkill = async () => {
+        let config3 = {
+            maxBodyLength: Infinity,
+            headers: { 
+              'Content-Type': 'application/json', 
+              'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
+            }
+          };
         try {
             if (header !== "") {
                 const response = await axios.post(
@@ -187,7 +209,7 @@ const AdminPage: React.FC = () => {
                         "email": "yarkinerg@gmail.com",
                         "header": header,
                         "text": text
-                    }
+                    }, config3
                 );
                 setSkillErr("");
                 (document.getElementById(`header-skill`) as HTMLInputElement).value = "";
