@@ -125,7 +125,7 @@ function Home() {
             </Container>
             <Container fluid id='aboutme' className='aboutMe'>
                 <Row className='justify-content-md-center'>
-                    <Col xs lg={3}>
+                    <Col sm lg={3}>
                         <img src={miniPp} alt='Logo' className='aboutMePp' />
                     </Col>
                     <Col>
