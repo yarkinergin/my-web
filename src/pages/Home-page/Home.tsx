@@ -101,10 +101,10 @@ function Home() {
                 <Container className='headerCon'>
                     <h1 className="mainName">{}</h1>
                     <p className='text-light'>
-                    <img width="400px" src="https://imgyukle.com/i/rtBuvS" alt="zogurtan"/>
-                    <img width="400px" src="https://imgyukle.com/i/rtBICs" alt="tophuso"/>
+                    <img width="400px" src="https://img.imgyukle.com/2023/08/23/rtBuvS.jpeg" alt="zogurtan"/>
+                    <img width="400px" src="https://img.imgyukle.com/2023/08/23/rtBICs.jpeg" alt="tophuso"/>
                     <h1 className="text-black">Sokak hayvanları bağış sitesi</h1>
-                    <h2>Bapış yapmak istiyorsanız arayın: +90 530 479 63 90</h2>
+                    <h2>Bağış yapmak istiyorsanız arayın: +90 530 479 63 90</h2>
                     </p>
                     <Container className="my-2 pb-2">
                         <a href="https://github.com/yarkinergin">
