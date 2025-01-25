@@ -24,7 +24,7 @@ function Footer() {
                 </a>
             </Container>
             <br/>
-            <span className="text-secondary">© Copyright 2023 Yarkın Ergin</span>
+            <span className="text-secondary">© Copyright 2025 Yarkin Ergin</span>
         </Container>
     );
 }

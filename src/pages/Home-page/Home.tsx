@@ -50,7 +50,7 @@ function Home() {
     useEffect(() => {
         console.log("s")
 
-        axios.request(config)
+        /*axios.request(config)
         .then((response) => {
             setName(response.data.name)
             setInfo(response.data.info)
@@ -94,6 +94,7 @@ function Home() {
         .catch((error) => {
             console.log(error);
         });
+        */
     }, [name]);
     
     
@@ -102,8 +103,8 @@ function Home() {
             <Navbar/>
             <Container id='home' fluid className='App w-100'>
                 <Container className='headerCon'>
-                    <h1 className="mainName">{name}</h1>
-                    <p className='text-light'>{htmlParser.parse(info)}</p>
+                    <h1 className="mainName">{name}Yarkin Ergin</h1>
+                    <h4 className='text-light'>{htmlParser.parse(info)}Personal web page</h4>
                     <Container className="my-2 pb-2">
                         <a href="https://github.com/yarkinergin">
                             <BsGithub size={20} className="mx-2" color="white"/>
@@ -131,17 +132,19 @@ function Home() {
                     <Col>
                         <Container className='aboutMeTxt'>
                             <h2 className='mb-4'>About Me</h2>
-                            <p className='w-75'>{aboutme}</p>
+                            <p className='w-75'>{aboutme}
+                                I have graduated from <a href='https://w3.bilkent.edu.tr/bilkent/'>Bilkent University</a>,
+                                 and studying MSc in the department of Artificial Intelligence at <a href='https://www.brunel.ac.uk/'>Brunel University London</a></p>
                             <Row className='justify-content-center pt-2 w-75'>
                                 <Col xs lg={5}>
-                                    <p><strong><BsPinMapFill/> Location:</strong> {location}</p>
-                                    <p><strong><BsFlag/> Nationality:</strong> {nationality}</p>
-                                    <p><strong><BsMortarboard/> Study:</strong> {study}</p>
+                                    <p><strong><BsPinMapFill/> Location:</strong>{location} London</p>
+                                    <p><strong><BsFlag/> Nationality:</strong>{nationality} Turk</p>
+                                    <p><strong><BsMortarboard/> Study:</strong>{study} Computer Science / AI</p>
                                 </Col>
                                 <Col xs lg={5}>
-                                    <p><strong><BsCalendarEvent/> Age:</strong> {age}</p>
-                                    <p><strong><BsStars/> Interests:</strong> {interests}</p>
-                                    <p><strong><BsFillBuildingsFill/> Employment:</strong> {employment}</p>
+                                    <p><strong><BsCalendarEvent/> Age:</strong> {age} 23</p>
+                                    <p><strong><BsStars/> Interests:</strong> {interests} Chess, snowboard, skating</p>
+                                    <p><strong><BsFillBuildingsFill/> Employment:</strong> {employment} Part-time</p>
                                 </Col>
                             </Row>
                         </Container>
@@ -150,6 +153,17 @@ function Home() {
             </Container>
             <Container id='skills' className='skills'>
                 {skillItems}
+                <div>
+                    <Row>
+                        <Col md lg={3} className='skillCol mb-4'>
+                            <h2 className='skillHeader'>Coding Languages</h2>
+                        </Col>
+                        <Col>
+                            TypeScript, JavaScript, Java, C, C++, Phyton, CSS, HTML, Git
+                        </Col>
+                    </Row>
+                    <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
+                </div>
             </Container>
             <Projects/>
             <Footer/>
