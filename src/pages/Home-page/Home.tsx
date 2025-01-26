@@ -134,7 +134,7 @@ function Home() {
                             <h2 className='mb-4'>About Me</h2>
                             <p className='w-75'>{aboutme}
                                 I have graduated from <a href='https://w3.bilkent.edu.tr/bilkent/'>Bilkent University</a>,
-                                 and studying MSc in the department of Artificial Intelligence at <a href='https://www.brunel.ac.uk/'>Brunel University London</a></p>
+                                 and studying MSc in the department of Artificial Intelligence at <a href='https://www.brunel.ac.uk/'>Brunel University London</a>.</p>
                             <Row className='justify-content-center pt-2 w-75'>
                                 <Col xs lg={5}>
                                     <p><strong><BsPinMapFill/> Location:</strong>{location} London</p>
