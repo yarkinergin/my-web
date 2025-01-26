@@ -6,7 +6,7 @@ function Navbar() {
         <div className="container-fluid">
             <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <div className="navbar-nav fs-5">
-                <a className="nav-link mx-2 text-white" aria-current="page" href="#">Home</a>
+                <a className="nav-link mx-2 text-white" aria-current="page" href="#home">Home</a>
                 <a className="nav-link mx-2 text-white" href="#aboutme">About me</a>
                 <a className="nav-link mx-2 text-white" href="#skills">Skills</a>
                 <a className="nav-link mx-2 text-white" href="#work">My works</a>
