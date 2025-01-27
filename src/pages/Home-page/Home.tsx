@@ -134,7 +134,9 @@ function Home() {
                             <h2 className='mb-4'>About Me</h2>
                             <p className='w-75'>{aboutme}
                                 I have graduated from <a href='https://w3.bilkent.edu.tr/bilkent/'>Bilkent University</a>,
-                                 and studying MSc in the department of Artificial Intelligence at <a href='https://www.brunel.ac.uk/'>Brunel University London</a>.</p>
+                                 and now studying MSc in the department of Artificial Intelligence at <a href='https://www.brunel.ac.uk/'>Brunel
+                                  University London</a>. I am experienced on designing complicating web-sites, both front-end and back-end.
+                                  One example is this site, mostly based on front-end. However I have added an admin page only I can access to edit texts.</p>
                             <Row className='justify-content-center pt-2 w-75'>
                                 <Col xs lg={5}>
                                     <p><strong><BsPinMapFill/> Location:</strong>{location} London</p>
@@ -159,10 +161,21 @@ function Home() {
                             <h2 className='skillHeader'>Coding Languages</h2>
                         </Col>
                         <Col>
-                            TypeScript, JavaScript, Java, C, C++, Phyton, CSS, HTML, Git
+                            TypeScript, JavaScript, Java, C, C++, Phyton, CSS, HTML, Git, Pua
                         </Col>
                     </Row>
                     <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
+                    <Row>
+                        <Col md lg={3} className='skillCol mb-4'>
+                            <h2 className='skillHeader'>Personal Projects</h2>
+                        </Col>
+                        <Col>
+                            I have designed a Discord bot to apply some commands easily and play a roulette game with friends. 
+                            In the game, points were given based on number of messagges sent to the server.
+                            <p></p>
+                            I have created a GTA server and added some mods using PUA language.
+                        </Col>
+                    </Row>
                 </div>
             </Container>
             <Projects/>
