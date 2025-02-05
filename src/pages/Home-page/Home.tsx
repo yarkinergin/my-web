@@ -13,7 +13,7 @@ import {BsPinMapFill, BsFlag, BsMortarboard, BsCalendarEvent, BsStars, BsFillBui
 import {BsGithub, BsLinkedin, BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 
 import miniPp from '../../images/mini-pp.jpg';
-  
+
 function Home() {
     const [name, setName] = useState("");
     const [info, setInfo] = useState("");
