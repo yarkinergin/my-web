@@ -13,6 +13,8 @@ import {BsPinMapFill, BsFlag, BsMortarboard, BsCalendarEvent, BsStars, BsFillBui
 import {BsGithub, BsLinkedin, BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 
 import miniPp from '../../images/mini-pp.jpg';
+import { MDBListGroup, MDBListGroupItem } from 'mdb-react-ui-kit';
+
 
 function Home() {
     const [name, setName] = useState("");
@@ -104,7 +106,7 @@ function Home() {
             <Container id='home' fluid className='App w-100'>
                 <Container className='headerCon'>
                     <h1 className="mainName">{name}Yarkin Ergin</h1>
-                    <h4 className='text-light'>{htmlParser.parse(info)}Personal web page</h4>
+                    <h4 className='text-light'>{htmlParser.parse(info)} Software / AI developer</h4>
                     <Container className="my-2 pb-2">
                         <a href="https://github.com/yarkinergin">
                             <BsGithub size={20} className="mx-2" color="white"/>
@@ -135,8 +137,9 @@ function Home() {
                             <p className='w-75'>{aboutme}
                                 I have graduated from <a href='https://w3.bilkent.edu.tr/bilkent/'>Bilkent University</a>,
                                  and now studying MSc in the department of Artificial Intelligence at <a href='https://www.brunel.ac.uk/'>Brunel
-                                  University London</a>. I am experienced on designing complicating web-sites, both front-end and back-end.
-                                  One example is this site, mostly based on front-end. However I have added an admin page only I can access to edit texts.</p>
+                                  University London</a>. I am experienced on designing complicating web-sites, both front-end and back-end. Currently 
+                                  I am working on my dissertation, which is about physiotherapy in VR. I will graduate in september 2025 and plan to work 
+                                  as an ai engineer in London.</p>
                             <Row className='justify-content-center pt-2 w-75'>
                                 <Col xs lg={5}>
                                     <p><strong><BsPinMapFill/> Location:</strong>{location} London</p>
@@ -146,7 +149,7 @@ function Home() {
                                 <Col xs lg={5}>
                                     <p><strong><BsCalendarEvent/> Age:</strong> {age} 23</p>
                                     <p><strong><BsStars/> Interests:</strong> {interests} Chess, snowboard, skating</p>
-                                    <p><strong><BsFillBuildingsFill/> Employment:</strong> {employment} Part-time</p>
+                                    <p><strong><BsFillBuildingsFill/> Employment:</strong> {employment} Full time</p>
                                 </Col>
                             </Row>
                         </Container>
@@ -161,7 +164,26 @@ function Home() {
                             <h2 className='skillHeader'>Coding Languages</h2>
                         </Col>
                         <Col>
-                            TypeScript, JavaScript, Java, C, C++, Phyton, CSS, HTML, Git, Pua
+                            <MDBListGroup style={{width: "200px"}}>
+                                <MDBListGroupItem>
+                                TypeScript
+                                </MDBListGroupItem>
+                                <MDBListGroupItem>
+                                JavaScript
+                                </MDBListGroupItem>
+                                <MDBListGroupItem>
+                                C
+                                </MDBListGroupItem>
+                                <MDBListGroupItem>
+                                C++
+                                </MDBListGroupItem>
+                                <MDBListGroupItem>
+                                Python
+                                </MDBListGroupItem>
+                                <MDBListGroupItem>
+                                HTML
+                                </MDBListGroupItem>
+                            </MDBListGroup>
                         </Col>
                     </Row>
                     <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
@@ -170,10 +192,20 @@ function Home() {
                             <h2 className='skillHeader'>Personal Projects</h2>
                         </Col>
                         <Col>
-                            I have designed a Discord bot to apply some commands easily and play a roulette game with friends. 
-                            In the game, points were given based on number of messagges sent to the server.
-                            <p></p>
-                            I have created a GTA server and added some mods using PUA language.
+                            <MDBListGroup>
+                                <MDBListGroupItem>
+                                In my first year of bachelor, I have designed a Discord bot and designed a rolette 
+                                game inside in it based on the points of users earned by texting in the server.
+                                </MDBListGroupItem>
+                                <MDBListGroupItem>
+                                I have designed websites with React and different kind of backend technologies such as
+                                Amazon AWS, Google Console, Mongoose and SQL
+                                </MDBListGroupItem>
+                                <MDBListGroupItem>
+                                As a group project we have designed a food suggestion web-site based on previous comments
+                                of a user. The website contains use cases for users, admin and restourant owners.
+                                </MDBListGroupItem>
+                            </MDBListGroup>
                         </Col>
                     </Row>
                 </div>
