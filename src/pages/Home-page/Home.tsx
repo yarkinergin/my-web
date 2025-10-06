@@ -137,7 +137,7 @@ function Home() {
                             <h2 className='mb-4'>About Me</h2>
                             <p className='w-75'>{aboutme}
                                 I am an MSc Artificial Intelligence graduate from <a href='https://www.brunel.ac.uk/'>Brunel University London</a> 
-                            (Distinction) with hands-on experience in software engineering, machine learning, and full-stack development. 
+                             (Distinction) with hands-on experience in software engineering, machine learning, and full-stack development. 
                             My recent work includes building a real-time VR rehabilitation platform in Unity integrated with deep learning models, and developing scalable applications using 
                                 Python, React, Node.js, and AWS. I’m passionate about creating intelligent, human-centred software that solves real-world 
                                 problems — combining technical precision with creativity. Driven, curious, and detail-oriented, I thrive in collaborative 
