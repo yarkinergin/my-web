@@ -16,10 +16,6 @@ root.render(
     cookieDomain={window.location.hostname}
     cookieSecure={false}
     >
-      <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3199190235431297"
-        crossOrigin="anonymous"></script>
-      </head>
       <App />
     </AuthProvider>
   </React.StrictMode>
