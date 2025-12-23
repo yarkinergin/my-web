@@ -14,7 +14,7 @@ let App = () => {
     <Router>
       <Routes>
         <Route path={`/`} element={<Home />} />
-        <Route path={`/admin`} element={<RequireAuth loginPath='/login'><AdminPage /></RequireAuth>} />
+        <Route path={`/admin`} element={<AdminPage />} />
         <Route path={`/login`} element={<Login />}/>
       </Routes>
     </Router>
