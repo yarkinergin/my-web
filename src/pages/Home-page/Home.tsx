@@ -218,6 +218,32 @@ function Home() {
                         <Col>
                             <MDBListGroup>
                                 <MDBListGroupItem>
+                                    <strong>Admin Please - London, UK. Nov 2025 - Present</strong>
+                                    <br/>
+                                    Full Stack Engineer
+                                    <br/>
+                                    <br/>
+                                    Thrived in a fast-paced startup environment, playing a key role in driving the company’s rapid growth.
+                                    <br/>
+                                    Designed and developed a responsive B2C productivity management web application using Angular and TypeScript
+                                    <br/>
+                                    Architected and implemented scalable full-stack solutions from scratch across frontend, backend, and database layers
+                                    <br/>
+                                    Built backend services using Encore TS (Node.js) and developed RESTful APIs to ensure clean and efficient data flow
+                                    <br/>
+                                    Modeled and managed PostgreSQL databases using Prisma ORM, implementing optimized schemas and migrations
+                                    <br/>
+                                    Deployed and maintained cloud infrastructure and services on Google Cloud Platform (GCP)
+                                    <br/>
+                                    Developed cross-platform mobile applications using Capacitor
+                                    <br/>
+                                    Styled and maintained UI components using Tailwind CSS and SCSS to ensure responsive, consistent design
+                                    <br/>
+                                    Wrote clean, maintainable code, implemented basic tests, and optimized performance for a seamless user experience
+                                    <br/>
+                                    Collaborated closely with the founding team on product decisions, technical feasibility, and delivery timelines in a fast-paced startup environment
+                                </MDBListGroupItem>
+                                <MDBListGroupItem>
                                     <strong>AlgoritiX - Maryland, USA (Remote) 2023 - 2024 </strong>
                                     <br/>
                                     Full Stack Developer (Part-time)
@@ -247,7 +273,7 @@ function Home() {
                                     Collaborated with course instructors to deliver hands-on lab sessions and foster student engagement
                                 </MDBListGroupItem>
                                 <MDBListGroupItem>
-                                    <strong>Turkish Ministry of Internal Affairs Jun 2023 - Aug 2023</strong>
+                                    <strong>Turkish Ministry of Internal Affairs. Jun 2023 - Aug 2023</strong>
                                     <br/>
                                     Internship
                                     <br/>
