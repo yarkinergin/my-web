@@ -159,35 +159,6 @@ Previously, I built a real-time VR rehabilitation platform in Unity integrated w
             <Container id='skills' className='skills'>
                 {skillItems}
                 <div>
-                    <Row>
-                        <Col md lg={3} className='skillCol mb-4'>
-                            <h2 className='skillHeader'>Summary</h2>
-                        </Col>
-                        <Col>
-                            <MDBListGroup>
-                                <ListGroupItemText>
-                                    Software Engineer with hands-on experience in full-stack web development, AI engineering, and cloud infrastructure.
-                                </ListGroupItemText>
-                                <ListGroupItemText>
-                                    Proficient in modern technologies, including React, Node.js, TypeScript, Python, and AWS.
-                                </ListGroupItemText>
-                                <ListGroupItemText>
-                                    Developed an AI-powered VR rehabilitation system using Unity for MSc dissertation, implementing six time-series models:
-                                    Random Forest, SVM, Gradient Boosting, RNNs (LSTM), 1D-CNN, and Transformers.
-                                </ListGroupItemText>
-                                <ListGroupItemText>
-                                    Strong collaborator with experience in Agile teams and cross-functional environments.
-                                </ListGroupItemText>
-                                <ListGroupItemText>
-                                    Graduated with an MSc in Artificial Intelligence from Brunel University London, awarded a Distinction.
-                                </ListGroupItemText>
-                                <ListGroupItemText>
-                                    Earned AWS Certified AI Practitioner, AWS Certified Machine Learning Engineer – Associate, and AWS Certified
-                                    Machine Learning – Specialty, demonstrating validated cloud-based ML expertise.
-                                </ListGroupItemText>
-                            </MDBListGroup>
-                        </Col>
-                    </Row>
                     <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
                     <Row>
                         <Col md lg={3} className='skillCol mb-4'>
