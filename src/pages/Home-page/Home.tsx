@@ -136,12 +136,10 @@ function Home() {
                         <Container className='aboutMeTxt'>
                             <h2 className='mb-4'>About Me</h2>
                             <p className='w-75'>{aboutme}
-                                I am an MSc Artificial Intelligence graduate from <a href='https://www.brunel.ac.uk/'>Brunel University London</a> 
-                             (Distinction) with hands-on experience in software engineering, machine learning, and full-stack development. 
-                            My recent work includes building a real-time VR rehabilitation platform in Unity integrated with deep learning models, and developing scalable applications using 
-                                Python, React, Node.js, and AWS. I’m passionate about creating intelligent, human-centred software that solves real-world 
-                                problems — combining technical precision with creativity. Driven, curious, and detail-oriented, I thrive in collaborative 
-                                environments where I can design, build, and optimise systems that deliver meaningful impact.</p>
+I am an MSc Artificial Intelligence graduate from <a href='https://www.brunel.ac.uk/'>Brunel University London</a> (Distinction) and a Full Stack Engineer with experience building AI-powered, scalable web and mobile applications in fast-paced startup environments. My recent work includes developing a B2C productivity management platform using Angular, TypeScript, Node.js, PostgreSQL, Prisma, and Google Cloud Platform, where I contributed to full-stack architecture, API design, and cloud deployment. 
+
+Previously, I built a real-time VR rehabilitation platform in Unity integrated with deep learning models, combining immersive technologies with machine learning. I am passionate about creating intelligent, user-centred software that bridges AI and product engineering — delivering clean architecture, seamless user experiences, and measurable impact. Driven, curious, and detail-oriented, I thrive in collaborative teams where I can design, build, and scale innovative solutions.
+</p>
                             <Row className='justify-content-center pt-2 w-75'>
                                 <Col xs lg={5}>
                                     <p><strong><BsPinMapFill/> Location:</strong>{location} London</p>
@@ -149,7 +147,7 @@ function Home() {
                                     <p><strong><BsMortarboard/> Study:</strong>{study} Computer Science / AI</p>
                                 </Col>
                                 <Col xs lg={5}>
-                                    <p><strong><BsCalendarEvent/> Age:</strong> {age} 23</p>
+                                    <p><strong><BsCalendarEvent/> Age:</strong> {age} 24</p>
                                     <p><strong><BsStars/> Interests:</strong> {interests} Chess, snowboard, skating</p>
                                     <p><strong><BsFillBuildingsFill/> Employment:</strong> {employment} Full time</p>
                                 </Col>
