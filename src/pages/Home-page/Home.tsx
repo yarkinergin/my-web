@@ -216,7 +216,7 @@ Previously, I built a real-time VR rehabilitation platform in Unity integrated w
                         <Col>
                             <MDBListGroup>
                                 <MDBListGroupItem>
-                                    <strong>Admin Please - London, UK. Nov 2025 - Present</strong>
+                                    <strong>Admin Please - London, UK. Jan 2026 - Present</strong>
                                     <br/>
                                     Full Stack Engineer
                                     <br/>
