@@ -1,20 +1,38 @@
-import React from 'react';
+import React from "react";
+import { Navbar as BsNavbar, Nav, Container } from "react-bootstrap";
 
 function Navbar() {
-    return(
-        <nav className="navbar bg-nav navbar-expand-sm fixed-top navbar-light bg-dark bg-opacity-25">
-        <div className="container-fluid">
-            <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-            <div className="navbar-nav fs-5">
-                <a className="nav-link mx-2 text-white" aria-current="page" href="#home">Home</a>
-                <a className="nav-link mx-2 text-white" href="#aboutme">About me</a>
-                <a className="nav-link mx-2 text-white" href="#skills">Skills</a>
-                <a className="nav-link mx-2 text-white" href="#work">My works</a>
-            </div>
-            </div>
-        </div>
-        </nav>
-    );
+  return (
+    <BsNavbar
+      expand="sm"
+      fixed="top"
+      variant="dark"
+      className="bg-nav bg-dark bg-opacity-25"
+    >
+      <Container>
+        <BsNavbar.Toggle aria-controls="main-nav" className="ms-auto" />
+        <BsNavbar.Collapse id="main-nav">
+          <Nav className="mx-auto fs-5">
+            <Nav.Link className="mx-2 text-white" href="#home">
+              Home
+            </Nav.Link>
+            <Nav.Link className="mx-2 text-white" href="#aboutme">
+              About
+            </Nav.Link>
+            <Nav.Link className="mx-2 text-white" href="#experience">
+              Experience
+            </Nav.Link>
+            <Nav.Link className="mx-2 text-white" href="#skills">
+              Skills
+            </Nav.Link>
+            <Nav.Link className="mx-2 text-white" href="#work">
+              Work
+            </Nav.Link>
+          </Nav>
+        </BsNavbar.Collapse>
+      </Container>
+    </BsNavbar>
+  );
 }
 
 export default Navbar;

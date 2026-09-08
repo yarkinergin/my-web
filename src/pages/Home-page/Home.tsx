@@ -1,406 +1,214 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Row, Col, ListGroup } from 'react-bootstrap';
-import { Parser } from "html-to-react";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { BsGithub, BsLinkedin, BsEnvelope, BsDownload, BsPinMapFill } from "react-icons/bs";
 
-import { Buffer } from "buffer";
-import Projects from './Projects';
-import Footer from './Footer';
-import Navbar from './Navbar';
-
-import {BsPinMapFill, BsFlag, BsMortarboard, BsCalendarEvent, BsStars, BsFillBuildingsFill} from "react-icons/bs"
-import {BsGithub, BsLinkedin, BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
-
-import miniPp from '../../images/mini-pp.jpg';
-import { MDBListGroup, MDBListGroupItem } from 'mdb-react-ui-kit';
-import { List, ListGroupItemText, ListInlineItem } from 'reactstrap';
-
+import Projects from "./Projects";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import miniPp from "../../images/mini-pp.jpg";
+import {
+  certifications,
+  education,
+  experience,
+  honors,
+  profile,
+  projects,
+  skillChips,
+} from "./resumeData";
 
 function Home() {
-    const [name, setName] = useState("");
-    const [info, setInfo] = useState("");
-    const [aboutme, setAboutme] = useState("");
-    const [location, setLoc] = useState("");
-    const [nationality, setNat] = useState("");
-    const [study, setStu] = useState("");
-    const [age, setAge] = useState("");
-    const [interests, setInt] = useState("");
-    const [employment, setEmp] = useState("");
+  return (
+    <div>
+      <Navbar />
+      <Container id="home" fluid className="App w-100">
+        <Container className="headerCon">
+          <h1 className="mainName">{profile.name}</h1>
+          <h4 className="text-light mb-1">
+            {profile.title} · {profile.location}
+          </h4>
+          <p className="text-light mb-3 hero-sub">{profile.headline}</p>
+          <div className="hero-actions">
+            <a className="hero-btn hero-btn-primary" href={profile.cvHref} download>
+              <BsDownload aria-hidden /> Download CV
+            </a>
+            <a className="hero-btn" href={`mailto:${profile.email}`}>
+              <BsEnvelope aria-hidden /> Email
+            </a>
+            <a
+              className="hero-btn"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsLinkedin aria-hidden /> LinkedIn
+            </a>
+          </div>
+          <a
+            href={profile.github}
+            className="hero-github"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
+            <BsGithub size={22} />
+          </a>
+        </Container>
+      </Container>
 
-    const [skillItems, setSKi] = useState(null);
+      <Container fluid id="aboutme" className="aboutMe">
+        <Row className="justify-content-md-center">
+          <Col sm lg={3}>
+            <img src={miniPp} alt={`${profile.name} portrait`} className="aboutMePp" />
+          </Col>
+          <Col>
+            <Container className="aboutMeTxt">
+              <h2 className="mb-3">About</h2>
+              <p className="about-copy">{profile.about}</p>
+              <p className="mb-0">
+                <strong>
+                  <BsPinMapFill aria-hidden /> Location:
+                </strong>{" "}
+                {profile.location}
+              </p>
+            </Container>
+          </Col>
+        </Row>
+      </Container>
 
-    let skillArr: any = []
+      <Container id="skills" className="skills">
+        <Row className="mb-4">
+          <Col md lg={3} className="skillCol mb-3">
+            <h2 className="skillHeader">Skills</h2>
+          </Col>
+          <Col className="d-flex flex-wrap align-items-center gap-2 py-1">
+            {skillChips.map((skill) => (
+              <span key={skill} className="skill-chip">
+                {skill}
+              </span>
+            ))}
+          </Col>
+        </Row>
 
-    const htmlParser = Parser();
+        <hr className="section-rule" />
 
-
-    let data = {
-        email: `yarkinerg@gmail.com`
-    };
-
-    let config = {
-        method: 'get',
-        maxBodyLength: Infinity,
-        url: 'https://yarkinergin.cyclic.cloud/api/info/about',
-        headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
-        },
-        data : data
-    };
-
-    useEffect(() => {
-        console.log("s")
-
-        /*axios.request(config)
-        .then((response) => {
-            setName(response.data.name)
-            setInfo(response.data.info)
-            setAboutme(response.data.aboutme)
-            setLoc(response.data.location)
-            setNat(response.data.nationality)
-            setStu(response.data.study)
-            setAge(response.data.age)
-            setInt(response.data.interests)
-            setEmp(response.data.employment)
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-
-        axios.request({
-            method: 'post',
-            maxBodyLength: Infinity,
-            url: 'https://yarkinergin.cyclic.cloud/api/blog/skills',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Authorization': `Basic ${Buffer.from('yarking:Bella1304').toString('base64')}`
-            },
-            data: data
-        })
-        .then((response) => {
-            setSKi((response.data.skill).map((ski: any) => 
-                <div key={ski._id}>
-                <Row>
-                    <Col md lg={3} className='skillCol mb-4'>
-                        <h2 className='skillHeader'>{ski.header}</h2>
-                    </Col>
-                    <Col>
-                        {htmlParser.parse(ski.text)}
-                    </Col>
-                </Row>
-                <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
+        <Row id="experience">
+          <Col md lg={3} className="skillCol mb-4">
+            <h2 className="skillHeader">Experience</h2>
+          </Col>
+          <Col>
+            {experience.map((job) => (
+              <article key={`${job.company}-${job.dates}`} className="exp-card">
+                <div className="exp-card-top">
+                  <div>
+                    <h3 className="exp-title">{job.title}</h3>
+                    <p className="exp-company mb-0">
+                      {job.company} · {job.location}
+                    </p>
+                  </div>
+                  <p className="exp-dates mb-0">{job.dates}</p>
                 </div>
-            ));
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-        */
-    }, [name]);
-    
-    
-    return (
-        <div>
-            <Navbar/>
-            <Container id='home' fluid className='App w-100'>
-                <Container className='headerCon'>
-                    <h1 className="mainName">{name}Yarkin Ergin</h1>
-                    <h4 className='text-light'>{htmlParser.parse(info)} Software / AI developer</h4>
-                    <Container className="my-2 pb-2">
-                        <a href="https://github.com/yarkinergin">
-                            <BsGithub size={20} className="mx-2" color="white"/>
-                        </a>
-                        <a href="https://www.linkedin.com/in/yark%C4%B1n-ergin-aa2b6b1a8/">
-                            <BsLinkedin size={20} className="mx-2" color="white"/>
-                        </a>
-                        <a href="https://www.instagram.com/yarkinergin/">
-                            <BsInstagram size={20} className="mx-2" color="white"/>
-                        </a>
-                        <a href="https://www.facebook.com/ergin.yarkin/">
-                            <BsFacebook size={20} className="mx-2" color="white"/>
-                        </a>
-                        <a href="https://twitter.com/yarknergin">
-                            <BsTwitter size={20} className="mx-2" color="white"/>
-                        </a>
-                    </Container>
-                </Container>
-            </Container>
-            <Container fluid id='aboutme' className='aboutMe'>
-                <Row className='justify-content-md-center'>
-                    <Col sm lg={3}>
-                        <img src={miniPp} alt='Logo' className='aboutMePp' />
-                    </Col>
-                    <Col>
-                        <Container className='aboutMeTxt'>
-                            <h2 className='mb-4'>About Me</h2>
-                            <p className='w-75'>{aboutme}
-I am an MSc Artificial Intelligence graduate from <a href='https://www.brunel.ac.uk/'>Brunel University London</a> (Distinction) and a Full Stack Engineer with experience building AI-powered, scalable web and mobile applications in fast-paced startup environments. My recent work includes developing a B2C productivity management platform using Angular, TypeScript, Node.js, PostgreSQL, Prisma, and Google Cloud Platform, where I contributed to full-stack architecture, API design, and cloud deployment. 
-
-Previously, I built a real-time VR rehabilitation platform in Unity integrated with deep learning models, combining immersive technologies with machine learning. I am passionate about creating intelligent, user-centred software that bridges AI and product engineering — delivering clean architecture, seamless user experiences, and measurable impact. Driven, curious, and detail-oriented, I thrive in collaborative teams where I can design, build, and scale innovative solutions.
-</p>
-                            <Row className='justify-content-center pt-2 w-75'>
-                                <Col xs lg={5}>
-                                    <p><strong><BsPinMapFill/> Location:</strong>{location} London</p>
-                                    <p><strong><BsFlag/> Nationality:</strong>{nationality} Turk</p>
-                                    <p><strong><BsMortarboard/> Study:</strong>{study} Computer Science / AI</p>
-                                </Col>
-                                <Col xs lg={5}>
-                                    <p><strong><BsCalendarEvent/> Age:</strong> {age} 24</p>
-                                    <p><strong><BsStars/> Interests:</strong> {interests} Chess, snowboard, skating</p>
-                                    <p><strong><BsFillBuildingsFill/> Employment:</strong> {employment} Full time</p>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </Col>
-                </Row>
-            </Container>
-            <Container id='skills' className='skills'>
-                {skillItems}
-                <div>
-                    <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
-                    <Row>
-                        <Col md lg={3} className='skillCol mb-4'>
-                            <h2 className='skillHeader'>Education</h2>
-                        </Col>
-                        <Col>
-                        <MDBListGroup>
-                            <MDBListGroupItem>
-                                <strong>Artificial Intelligence Sep 2024 - Sep 2025</strong>
-                                <br/>
-                                MSc | Brunel University London
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                <strong>Computer Science Sep 2019 - Jun 2024</strong>
-                                <br/>
-                                Bachelor | Bilkent University
-                            </MDBListGroupItem>
-                        </MDBListGroup>
-                        </Col>
-                    </Row>
-                    <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
-                    <Row>
-                        <Col md lg={3} className='skillCol mb-4'>
-                            <h2 className='skillHeader'>Work Experience</h2>
-                        </Col>
-                        <Col>
-                            <MDBListGroup>
-                                <MDBListGroupItem>
-                                    <strong>Admin Please - London, UK. Jan 2026 - Present</strong>
-                                    <br/>
-                                    Full Stack Engineer
-                                    <br/>
-                                    <br/>
-                                    Thrived in a fast-paced startup environment, playing a key role in driving the company’s rapid growth.
-                                    <br/>
-                                    Designed and developed a responsive B2C productivity management web application using Angular and TypeScript
-                                    <br/>
-                                    Architected and implemented scalable full-stack solutions from scratch across frontend, backend, and database layers
-                                    <br/>
-                                    Built backend services using Encore TS (Node.js) and developed RESTful APIs to ensure clean and efficient data flow
-                                    <br/>
-                                    Modeled and managed PostgreSQL databases using Prisma ORM, implementing optimized schemas and migrations
-                                    <br/>
-                                    Deployed and maintained cloud infrastructure and services on Google Cloud Platform (GCP)
-                                    <br/>
-                                    Developed cross-platform mobile applications using Capacitor
-                                    <br/>
-                                    Styled and maintained UI components using Tailwind CSS and SCSS to ensure responsive, consistent design
-                                    <br/>
-                                    Wrote clean, maintainable code, implemented basic tests, and optimized performance for a seamless user experience
-                                    <br/>
-                                    Collaborated closely with the founding team on product decisions, technical feasibility, and delivery timelines in a fast-paced startup environment
-                                </MDBListGroupItem>
-                                <MDBListGroupItem>
-                                    <strong>AlgoritiX - Maryland, USA (Remote) 2023 - 2024 </strong>
-                                    <br/>
-                                    Full Stack Developer (Part-time)
-                                    <br/>
-                                    <br/>
-                                    Developed and maintained full-stack web applications using React, Node.js, and PostgreSQL (www.codeapeel.org)
-                                    <br/>
-                                    Built responsive user interfaces, integrated RESTful APIs, and deployed applications to AWS
-                                    <br/>
-                                    Collaborated with cross-functional teams in Agile environments to deliver secure, scalable solutions
-                                    <br/>
-                                    Implemented secure authentication and optimised performance for speed and efficiency
-                                </MDBListGroupItem>
-                                <MDBListGroupItem>
-                                    <strong>Bilkent University 2023 - 2024</strong>
-                                    <br/>
-                                    Tutorship (Part-time)
-                                    <br/>
-                                    <br/>
-                                    Provided academic support and one-on-one guidance to undergraduate students in an introductory Python course
-                                    <br/>
-                                    Assisted students in understanding core programming concepts, including variables, control structures, functions, and
-                                    basic data structures
-                                    <br/>
-                                    Helped students debug code, prepare for exams, and complete programming assignments
-                                    <br/>
-                                    Collaborated with course instructors to deliver hands-on lab sessions and foster student engagement
-                                </MDBListGroupItem>
-                                <MDBListGroupItem>
-                                    <strong>Turkish Ministry of Internal Affairs. Jun 2023 - Aug 2023</strong>
-                                    <br/>
-                                    Internship
-                                    <br/>
-                                    <br/>
-                                    Assisted in designing and developing responsive websites using HTML, CSS, JavaScript, and modern frameworks.
-                                    <br/>
-                                    Implemented secure data transmission features using encryption protocols and techniques.
-                                    <br/>
-                                    Contributed to back-end development, focusing on integrating security best practices to protect user data.
-                                    <br/>
-                                    Collaborated with senior developers to troubleshoot issues, enhance site performance, and ensure compliance with
-                                    security standards.
-                                    <br/>
-                                    Gained hands-on experience with version control systems (e.g., Git) and agile development workflows
-                                </MDBListGroupItem>
-                                <MDBListGroupItem>
-                                    <strong>Karel Electronics Inc. Jun 2022 - Aug 2022</strong>
-                                    <br/>
-                                    Internship
-                                    <br/>
-                                    <br/>
-                                    Gained hands-on experience in machine learning and big data technologies, focusing on real-world applications in health
-                                    tech
-                                    <br/>
-                                    Developed a Python-based fall detection system aimed at remote monitoring and maintenance for elderly care
-                                    <br/>
-                                    Designed and trained machine learning models with a success rate exceeding 90% in accurately detecting fall events
-                                    <br/>
-                                    Leveraged large datasets to improve model accuracy, scalability, and reliability
-                                    <br/>
-                                    Contributed to system integration and testing, ensuring practical deployment readiness in real-life scenarios
-                                </MDBListGroupItem>
-                            </MDBListGroup>
-                        </Col>
-                    </Row>
-                    <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
-                    <Row>
-                        <Col md lg={3} className='skillCol mb-4'>
-                            <h2 className='skillHeader'>Personal Projects</h2>
-                        </Col>
-                        <Col>
-                        <MDBListGroup>
-                            <MDBListGroupItem>
-                                <strong>MSc Dissertation – AI-Powered VR Rehabilitation Application (Unity + Machine Learning)</strong>
-                                <br/>
-                                <br/>
-                                Developed a virtual reality rehabilitation application in Unity focused on time-series-based movement analysis for
-                                therapeutic use.
-                                <br/>
-                                Integrated six different machine learning models to classify and evaluate user motion patterns:
-                                Random Forest, Support Vector Machine (SVM), Gradient Boosting (XGBoost)
-                                Recurrent Neural Networks (RNN), including LSTM
-                                1D Convolutional Neural Networks (1D-CNN)
-                                Transformer models for time-series analysis
-                                <br/>
-                                Processed and labelled sensor data to train models for real-time feedback and rehabilitation progress tracking.
-                                <br/>
-                                Compared model accuracy, latency, and robustness to determine optimal deployment strategy in Unity.
-                                <br/>
-                                Demonstrated practical integration of AI models in an immersive VR environment, combining healthcare innovation with
-                                interactive technologies.
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                <strong>Bachelor’s Final Project – Intelligent Food Recommendation App (Github Link)</strong>
-                                <br/>
-                                Bilkent University | Sep 2019 – June 2024
-                                <br/>
-                                <br/>
-                                Developed the front-end of a web application that suggests foods based on users’ previous comments and preferences
-                                <br/>
-                                Built dynamic and responsive interfaces using React, Bootstrap, and TypeScript
-                                <br/>
-                                Focused on enhancing user experience through clean design and intuitive interaction flows
-                                <br/>
-                                Strengthened skills in component-based architecture, state management, and front-end best practices
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                <strong>AI Course Project – Monte Carlo-Based Chess Agent (Github Link)</strong>
-                                <br/>
-                                <br/>
-                                Applied core AI concepts to simulate decision-making in a complex, adversarial environment.
-                                <br/>
-                                Implemented Monte Carlo simulations to evaluate and select optimal moves based on statistical outcomes.
-                                <br/>
-                                Developed full chess logic, including board representation, move validation, and game state evaluation.
-                                <br/>
-                                Analysed performance through self-play and benchmark testing against heuristic-based strategies.
-                                <br/>
-                                Written in Python, emphasising clarity, algorithmic thinking, and AI-oriented design.
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                <strong>Personal Project – Nextcloud Admin Server</strong>
-                                <br/>
-                                <br/>
-                                Deployed and configured a self-hosted Nextcloud server using Amazon EC2 to manage personal cloud storage and
-                                administrative tools
-                                <br/>
-                                Handled server setup, security configurations, and routine maintenance for reliable uptime and performance
-                                <br/>
-                                Gained experience in cloud infrastructure, Linux server management, and secure data hosting practices
-                            </MDBListGroupItem>
-                            <MDBListGroupItem>
-                                <strong>Personal Project – Full-Stack Portfolio Website</strong>
-                                <br/>
-                                <br/>
-                                React, TypeScript, Mongoose, Firebase (www.yarkinergin.com)
-                                <br/>
-                                Designed and developed a full-stack personal portfolio website to showcase projects, skills, and experience.
-                                <br/>
-                                Built a dynamic front-end using React and TypeScript with a clean, responsive design for accessibility across devices.
-                                <br/>
-                                Implemented a Mongoose-based backend for structured data management and seamless integration.
-                                <br/>
-                                Deployed the site on Firebase, leveraging its hosting and authentication services for scalability and reliability.
-                                <br/>
-                                Gained hands-on experience in full-stack application design, cloud deployment, and modern web development best
-                                practices.
-                            </MDBListGroupItem>
-                        </MDBListGroup>
-                        </Col>
-                    </Row>
-                    <hr style={{background: 'grey', color: 'grey', borderColor: 'grey', height: '2px'}}/>
-                    <Row>
-                        <Col md lg={3} className='skillCol mb-4'>
-                            <h2 className='skillHeader lh-base'>Certifications and Honors</h2>
-                        </Col>
-                        <Col>
-                            <MDBListGroup>
-                                <MDBListGroupItem>
-                                    <strong><a href='https://www.credly.com/badges/67591fb5-8a0f-4e88-b0b6-7e2702c9e9fb/public_url'>AWS Certified AI Practitioner — Amazon Web Services (AWS)</a></strong>
-                                    <br/>
-                                    Credential ID: fd5a78cf5efd4a368f80ef32b66f340f – Issued: June 2025 · Expires: June 2028
-                                </MDBListGroupItem>
-                                <MDBListGroupItem>
-                                    <strong><a href='https://www.credly.com/badges/1e0936fc-2e18-4c97-80bb-18cd539ce6a8/public_url'>AWS Certified Machine Learning Engineer – Associate — Amazon Web Services (AWS)</a></strong>
-                                    <br/>
-                                    Credential ID: a3aa0f0a00dc4bb28fd863035f3b8ab3 – Issued: July 2025 · Expires: July 2028
-                                </MDBListGroupItem>
-                                <MDBListGroupItem>
-                                    <strong><a href='https://www.credly.com/badges/9ea8048d-fd0d-4377-ab81-54f0a1446356/public_url'>AWS Certified Machine Learning – Specialty — Amazon Web Services (AWS)</a></strong>
-                                    <br/>
-                                    Credential ID: 16ece76638e94111aa4a034a8c0b1f14 – Issued: August 2025 · Expires: August 2028
-                                </MDBListGroupItem>
-                                <MDBListGroupItem>
-                                    The best project chosen in the CS 319 Object-Oriented Software Engineering course (team). 2023.
-                                </MDBListGroupItem>
-                                <MDBListGroupItem>
-                                    Turkish National University Selection Exam (YKS), Ranked 14700/2.5m (0,0058%), 2019.
-                                </MDBListGroupItem>
-                            </MDBListGroup>
-                        </Col>
-                    </Row>
+                <ul className="exp-bullets">
+                  {job.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+                <div className="d-flex flex-wrap gap-2">
+                  {job.tech.map((tech) => (
+                    <span key={tech} className="skill-chip skill-chip-light">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-            </Container>
-            <Projects/>
-            <Footer/>
-        </div>
-    );
-    }
-    
+              </article>
+            ))}
+          </Col>
+        </Row>
+
+        <hr className="section-rule" />
+
+        <Row>
+          <Col md lg={3} className="skillCol mb-4">
+            <h2 className="skillHeader">Education</h2>
+          </Col>
+          <Col>
+            {education.map((item) => (
+              <article key={item.title} className="exp-card">
+                <div className="exp-card-top">
+                  <div>
+                    <h3 className="exp-title">{item.title}</h3>
+                    <p className="exp-company mb-0">
+                      {item.place}
+                      {item.note ? ` · ${item.note}` : ""}
+                    </p>
+                  </div>
+                  <p className="exp-dates mb-0">{item.dates}</p>
+                </div>
+              </article>
+            ))}
+          </Col>
+        </Row>
+
+        <hr className="section-rule" />
+
+        <Row>
+          <Col md lg={3} className="skillCol mb-4">
+            <h2 className="skillHeader">Projects</h2>
+          </Col>
+          <Col>
+            {projects.map((item) => (
+              <article key={item.title} className="exp-card">
+                <h3 className="exp-title">
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      {item.title}
+                    </a>
+                  ) : (
+                    item.title
+                  )}
+                </h3>
+                <p className="mb-2">{item.summary}</p>
+                <div className="d-flex flex-wrap gap-2">
+                  {item.tech.map((tech) => (
+                    <span key={tech} className="skill-chip skill-chip-light">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </Col>
+        </Row>
+
+        <hr className="section-rule" />
+
+        <Row>
+          <Col md lg={3} className="skillCol mb-4">
+            <h2 className="skillHeader lh-base">Certifications</h2>
+          </Col>
+          <Col>
+            {certifications.map((item) => (
+              <article key={item.label} className="exp-card">
+                <h3 className="exp-title">
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {item.label}
+                  </a>
+                </h3>
+                <p className="exp-company mb-0">{item.detail}</p>
+              </article>
+            ))}
+            <ul className="honors-list">
+              {honors.map((honor) => (
+                <li key={honor}>{honor}</li>
+              ))}
+            </ul>
+          </Col>
+        </Row>
+      </Container>
+
+      <Projects />
+      <Footer />
+    </div>
+  );
+}
+
 export default Home;
