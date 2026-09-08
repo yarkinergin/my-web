@@ -19,11 +19,11 @@ function Navbar() {
             <Nav.Link className="mx-2 text-white" href="#aboutme">
               About
             </Nav.Link>
-            <Nav.Link className="mx-2 text-white" href="#experience">
-              Experience
-            </Nav.Link>
             <Nav.Link className="mx-2 text-white" href="#skills">
               Skills
+            </Nav.Link>
+            <Nav.Link className="mx-2 text-white" href="#experience">
+              Experience
             </Nav.Link>
             <Nav.Link className="mx-2 text-white" href="#work">
               Work
